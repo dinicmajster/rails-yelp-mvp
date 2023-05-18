@@ -1,0 +1,15 @@
+<div class="container">
+<h3><%= @restaurant.name %></h3>
+<hr>
+<h3><%= @restaurant.address %></h3>
+<h3><%= @restaurant.phone_number %></h3>
+<h3><%= @restaurant.category %></h3>
+<hr>
+<h4>Reviews</h4>
+<h3><% @restaurant.reviews.each do |review|%></h3>
+<p>Rating: <%= review.rating%></p>
+<p><%= review.content%></p>
+<h3><% end%></h3>
+<button><%= link_to "Back to restaurants", restaurants_path %></button>
+<%= render 'reviews/form' %>
+</div>
